@@ -1,0 +1,32 @@
+kubetl version --client
+docker-machine-driver-xhyve
+minikube start
+minikube start --vm-driver=xhyve
+kubectl config current-context
+kubectl get nodes
+
+minikube stop
+minikube delete
+minikube ip
+minikube dashboard
+
+kubectl get pods/ep/svc
+kubectl get pods/<name>
+kubectl get pods --all-namespaces
+kubectl get rc -o wide
+kubectl get deploy
+
+kubectl apply -f
+kubectl apply -f deploy.yml --record
+
+kubectl rollout status deployment <name>
+kubectl rollout history deployment hello-deploy
+kubectl rollout undo deployment hello-deploy --to-revision=1
+
+kubectl create/apply -f pod.yml
+kubectl describe pods
+kubectl describe rc
+kubectl describe svc <name>
+kubectl delete svc <name>
+
+kubectl expose rc hello-rc --name=hello-svc --target-port=8080 --type=NodePort
